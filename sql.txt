@@ -1,0 +1,18 @@
+CREATE TABLE `clients` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `first` varchar(128) DEFAULT NULL,
+  `last` varchar(128) DEFAULT NULL,
+  `address` varchar(128) DEFAULT NULL,
+  `city` varchar(128) DEFAULT NULL,
+  `state` varchar(128) DEFAULT NULL,
+  `zip` varchar(5) DEFAULT NULL,
+  `email` varchar(128) DEFAULT NULL,
+  `comment` varchar(128) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+drop user"PHOTO_USER"@"localhost";
+create user"PHOTO_USER"@"localhost" identified by"PHPISFUN";
+grant all privileges on photography.* to"PHOTO_USER";
+
+GRANT ALL ON photography.* TO 'PHOTO_USER'@'localhost' IDENTIFIED BY 'PHPISFUN';
