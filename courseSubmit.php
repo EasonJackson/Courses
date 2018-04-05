@@ -15,7 +15,7 @@
 
   // require_once 'login.php';
   $hn = 'localhost';
-  $un = 'PROFESSOR_USER';
+  $un = 'PROFESSOR_USER'; //Not working here
   $pw = 'PHPISFUN';
   $db = 'courseselector';
   $conn = new mysqli($hn, $un, $pw, $db);
@@ -68,6 +68,8 @@
 	else
 	{
 		echo "<main>";
+		echo "<br> Course ID:" . $courseId . "<br>";
+		echo "<br> Department ID:" . $departmentId . "<br>";
 		echo "Succeed";
 		echo "</main>";
 	}
@@ -84,6 +86,8 @@
 	else
 	{
 		echo "<main>";
+		echo "<br> Course ID:" . $courseId . "<br>";
+		echo "<br> Assistant ID:" . $assistantId . "<br>";
 		echo "Succeed";
 		echo "</main>";
 	}

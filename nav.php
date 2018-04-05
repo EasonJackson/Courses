@@ -10,7 +10,7 @@
       <li><a href="studenttable.php">Students</a></li>
       <li><a href="professor.php">Professor Signup</a></li>
       <li><a href="professortable.php">Professors</a></li>
-      <li><a href="addCourseAndSelectTA.php"> Create Course and Choose TA </a></li>
+      <li><a href="addCourseAndSelectTA.php"> Create Course and Choose TA </a></li> <!--Added new page-->
       <li><a href="department.php">Department Signup</a></li>
       <li><a href="departmenttable.php">Departments</a></li>
 	</ul>
