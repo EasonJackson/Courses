@@ -13,32 +13,28 @@
   include 'header.php';
   include 'nav.php';
 
-  // require_once 'login.php';
-  $hn = 'localhost';
-  $un = 'PROFESSOR_USER'; //Not working here
-  $pw = 'PHPISFUN';
-  $db = 'courseselector';
+  require_once 'login.php';
   $conn = new mysqli($hn, $un, $pw, $db);
   if ($conn->connect_error) die($conn->connect_error);
 
   
   if (isset($_POST['courseName']) &&
       isset($_POST['courseId']) && 
-      isset($POST['departmentId']))
+      isset($_POST['departmentId']))
   {
   	// Insert courses
     $courseId = get_post($conn, 'courseId');
 	$courseName = get_post($conn, 'courseName');
 	$courseDescription = get_post($conn, 'courseDescription');
-	$assistantId = get_post($conn, 'assistantId');
+	$assistant = get_post($conn, 'assistant');
 	$timeOffer = get_post($conn, 'timeTable');
 	$departmentId = get_post($conn, 'departmentId');
 	
-    $query = "INSERT INTO courses VALUES('$courses', 
-    									 '$courseName',
-    									 '$courseDescription',
-    									 '$assistantId',
-    									 '$timeOffer')";
+    $query = "INSERT INTO courses VALUES('$courseId', 
+    		'$courseName',
+    		'$courseDescription',
+    		'$assistant',
+    		'$timeOffer')";
     
 	$result_course = $conn->query($query);
 
@@ -75,7 +71,7 @@
 	}
 
 	// Insert assistancy
-	$query = "INSERT INTO assistancy VALUES('$assistantId',
+	$query = "INSERT INTO assistancy VALUES('$assistant',
 											'$courseId')";
 	$result_assistancy = $conn->query($query);
 
@@ -87,7 +83,7 @@
 	{
 		echo "<main>";
 		echo "<br> Course ID:" . $courseId . "<br>";
-		echo "<br> Assistant ID:" . $assistantId . "<br>";
+		echo "<br> Assistant ID:" . $assistant . "<br>";
 		echo "Succeed";
 		echo "</main>";
 	}

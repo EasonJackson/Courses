@@ -20,7 +20,7 @@ if (!$conn) {
     die ('Fail to connect to MySQL: ' . mysqli_connect_error());   
 }
  
-$sql = 'SELECT Did, Dname
+$sql = 'SELECT Did, Dname 
         FROM department';
          
 $query = mysqli_query($conn, $sql);
@@ -50,6 +50,7 @@ echo '
 </table>
 </body>';
 
+include 'footer.php';
  
 // Should we need to run this? read section VII
 mysqli_free_result($query);
